@@ -51,6 +51,11 @@
   - Catatan kecil (belum dikerjakan): dialog galeri/surat belum punya focus trap (Tab bisa keluar dialog); slider lagu hanya seek saat tekan, belum bisa di-drag; dependensi `@base-ui/react`, `shadcn`, `class-variance-authority`, `components/ui/button.tsx` tidak dipakai (boleh dihapus).
   - Beda dari PRD: ada `kartu.doa` (WishCard) di content.ts; `use-reduced.ts` & `use-local-storage.ts` tidak dibuat (tidak diperlukan).
 
+## 2026-10-02 — Claude (sesi 3, fitur tambahan)
+- Ditambah: salam sesuai jam di pill hero (`lib/waktu.ts`, `components/hero.tsx`) dan kartu hitung mundur ulang tahun (`components/cards/birthday-card.tsx`, diletakkan setelah SurpriseCard, lebar 2 kolom). Tanggal lahir di `lib/content.ts` → `lahir` & `ultah`.
+- Pada hari H kartu berubah jadi "Selamat ulang tahun yang ke-N", salam hero juga berubah. Setelah lewat, otomatis menghitung mundur ke tahun depan.
+- Logika tanggal dites dengan node (zona Asia/Jakarta); tampilan belum diuji di browser.
+
 ## Titik berhenti
 Semua fitur kode sudah ada; tinggal verifikasi build & uji di perangkat nyata.
 

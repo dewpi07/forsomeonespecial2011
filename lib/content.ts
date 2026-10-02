@@ -19,6 +19,13 @@ export const CONTENT = {
   // Tanggal mulai kenal (format TAHUN-BULAN-TANGGAL)
   start: '2026-09-21',
 
+  // Tanggal lahir (format TAHUN-BULAN-TANGGAL) → dipakai hitung mundur ulang tahun
+  lahir: '2011-10-07',
+  ultah: {
+    kicker: 'Menuju hari spesialmu',
+    hariH: 'Semoga hari ini penuh hal-hal baik, dan semua doa kecilmu didengar.',
+  },
+
   hero: {
     judul: 'For You',
     sorot: 'pi',

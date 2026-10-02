@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowDown, Camera, Music2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { CONTENT } from '@/lib/content'
+import { birthdayInfo, getGreeting } from '@/lib/waktu'
 import { Glyph } from '@/components/glyph'
 
 function useTypewriter(text: string, active: boolean, speed = 28) {
@@ -42,6 +43,15 @@ export function Hero({ started }: { started: boolean }) {
   const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 120])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.2])
   const typed = useTypewriter(CONTENT.hero.kalimat, started)
+  // Salam sesuai jam; diisi setelah mount agar tidak beda antara server & browser
+  const [greeting, setGreeting] = useState<string | null>(null)
+  useEffect(() => {
+    setGreeting(
+      birthdayInfo(CONTENT.lahir).isToday
+        ? `Selamat ulang tahun, ${CONTENT.nama}`
+        : getGreeting(CONTENT.nama),
+    )
+  }, [])
   const igUrl = `https://instagram.com/${encodeURIComponent(CONTENT.sosmed.instagram)}`
   const ttUrl = `https://tiktok.com/@${encodeURIComponent(CONTENT.sosmed.tiktok)}`
   const title = CONTENT.hero.judul.split('')
@@ -94,7 +104,7 @@ export function Hero({ started }: { started: boolean }) {
           transition={{ delay: 0.1 }}
           className="mb-4 inline-flex items-center gap-2 rounded-full bg-bg/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-muted backdrop-blur"
         >
-          a little tribute
+          {greeting ?? 'a little tribute'}
         </motion.p>
 
         <h1 className="font-serif text-[clamp(3.4rem,13vw,7rem)] leading-none text-ink">

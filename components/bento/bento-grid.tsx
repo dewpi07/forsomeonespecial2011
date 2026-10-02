@@ -1,3 +1,4 @@
+import { BirthdayCard } from '@/components/cards/birthday-card'
 import { DaysCard } from '@/components/cards/days-card'
 import { LetterCard } from '@/components/cards/letter-card'
 import { PhotoCard } from '@/components/cards/photo-card'
@@ -31,6 +32,7 @@ export function BentoGrid() {
       <SpecialCard index={i++} />
       <DaysCard index={i++} />
       <SurpriseCard index={i++} />
+      <BirthdayCard index={i++} className={W2} />
 
       <FavoritesCard index={i++} className={W2} />
       <JokeCard index={i++} />
