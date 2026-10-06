@@ -23,7 +23,7 @@ export const CONTENT = {
   lahir: '2011-10-07',
   ultah: {
     kicker: 'Menuju hari spesialmu',
-    hariH: 'Semoga hari ini penuh hal-hal baik, dan semua doa kecilmu didengar.',
+    hariH: 'Happy birthday, yopi maharaja ❤️ Semogaaa dii umurrr kamuuu yanggg baruuu iniiiii, semuaaa hallll baikkk datangggg menghampiriii kamuuu. Semogaa kamuu selaluu sehatt, bahagiaa, dann semuaa impiann kamuuu satuuu perr satuu bisaa terwujuddd. Makasihh udahh hadirrr dii hidupp akuu dann selaluuu jadiii seseoranggg yanggg spesialll buatt akuuu. Akuu berharapp kitaa bisaa teruss barengg, melewatiii banyakk ceritaa dann hari-hari indahh bersamaa. I loveee youuu, always. 🥰🎂❤️',
   },
 
   hero: {
