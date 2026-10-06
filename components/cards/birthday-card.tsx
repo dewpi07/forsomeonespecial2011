@@ -8,6 +8,11 @@ import { birthdayInfo } from '@/lib/waktu'
 
 export function BirthdayCard({ index, className }: { index: number; className?: string }) {
   const [info, setInfo] = useState<ReturnType<typeof birthdayInfo> | null>(null)
+  const [isPreview, setIsPreview] = useState(false)
+
+  useEffect(() => {
+    setIsPreview(new URLSearchParams(window.location.search).has('previewBirthday'))
+  }, [])
 
   useEffect(() => {
     const tick = () => !document.hidden && setInfo(birthdayInfo(CONTENT.lahir))
@@ -29,7 +34,7 @@ export function BirthdayCard({ index, className }: { index: number; className?: 
           <CardKicker>{CONTENT.ultah.kicker}</CardKicker>
           <Cake className="size-5 text-accent" aria-hidden />
         </div>
-        {info?.isToday ? (
+        {info?.isToday || isPreview ? (
           <div>
             <p className="font-serif text-3xl leading-tight sm:text-4xl">
               Selamat ulang tahun yang ke-{info.age}, {CONTENT.nama}!
